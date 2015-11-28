@@ -13,7 +13,7 @@ class jtThemeBackend {
 	public function display_theme_admin() {
 ?>
 		<div class="wrap">
-			<h1>Theme Settings</h1>
+			<h1><?php _e( 'Theme Settings', 'jtbt' ); ?></h1>
 
 <?php
 			if ( $_SERVER['REQUEST_METHOD'] == "POST" ) {
@@ -31,7 +31,7 @@ class jtThemeBackend {
 			<form method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
 				<?php wp_nonce_field( 'change_theme_settings', 'theme-settings-nonce' ); ?>
 				
-				<h3>Address Details</h3>
+				<h3><?php _e( 'Address Details', 'jtbt' ); ?></h3>
 				
 				<table class="form-table">
 				<tr>
@@ -56,7 +56,7 @@ class jtThemeBackend {
 				</tr>
 				</table>
 				
-				<h3>Social Media Accounts</h3>
+				<h3><?php _e( 'Social Media Accounts', 'jtbt' ); ?></h3>
 				
 				<table class="form-table">
 				<tr>
@@ -83,9 +83,21 @@ class jtThemeBackend {
 					<th scope="row"><label>YouTube</label></th>
 					<td><input type="text" name="youtube" class="regular-text" placeholder="http://" value="<?php if ( isset( $jt_base_options['youtube'] ) ) echo esc_attr( $jt_base_options['youtube'] ); ?>"></td>
 				</tr>
+				<tr>
+					<th scope="row"><label>Additional Link 1</label></th>
+					<td><input type="text" name="additional_1" class="regular-text" placeholder="http://" value="<?php if ( isset( $jt_base_options['additional_1'] ) ) echo esc_attr( $jt_base_options['additional_1'] ); ?>"></td>
+				</tr>
+				<tr>
+					<th scope="row"><label>Additional Link 2</label></th>
+					<td><input type="text" name="additional_2" class="regular-text" placeholder="http://" value="<?php if ( isset( $jt_base_options['additional_2'] ) ) echo esc_attr( $jt_base_options['additional_2'] ); ?>"></td>
+				</tr>
+				<tr>
+					<th scope="row"><label>Additional Link 3</label></th>
+					<td><input type="text" name="additional_3" class="regular-text" placeholder="http://" value="<?php if ( isset( $jt_base_options['additional_3'] ) ) echo esc_attr( $jt_base_options['additional_3'] ); ?>"></td>
+				</tr>
 				</table>
 				
-				<h3>Contact Details</h3>
+				<h3><?php _e( 'Contact Details', 'jtbt' ); ?></h3>
 				
 				<table class="form-table">
 				<tr>
@@ -102,7 +114,7 @@ class jtThemeBackend {
 				</tr>
 				</table>
 				
-				<h3>Legal Details</h3>
+				<h3><?php _e( 'Legal Details', 'jtbt' ); ?></h3>
 				
 				<table class="form-table">
 				<tr>
@@ -119,7 +131,7 @@ class jtThemeBackend {
 				</tr>
 				</table>
 				
-				<p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="Save Changes"></p>
+				<p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="<?php _e( 'Save Changes', 'jtbt' ); ?>"></p>
 			</form>
 			
 		</div>

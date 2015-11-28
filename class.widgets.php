@@ -53,7 +53,7 @@ class BTAddress_Widget extends WP_Widget {
 ?>
 		<p>
 		<label for="<?php echo $this->get_field_id( 'text' ); ?>"><?php _e( 'Text before address:' ); ?></label> 
-		<textarea class="widefat" cols="20" rows="16" id="<?php echo $this->get_field_id( 'text' ); ?>" name="<?php echo $this->get_field_name( 'text' ); ?>"><?php echo esc_attr( $text ); ?></textarea>
+		<textarea class="widefat" cols="20" rows="8" id="<?php echo $this->get_field_id( 'text' ); ?>" name="<?php echo $this->get_field_name( 'text' ); ?>"><?php echo esc_attr( $text ); ?></textarea>
 		</p>
 
 <?php
@@ -121,7 +121,7 @@ class BTContact_Widget extends WP_Widget {
 ?>
 		<p>
 		<label for="<?php echo $this->get_field_id( 'text' ); ?>"><?php _e( 'Text before contact details:' ); ?></label> 
-		<textarea class="widefat" cols="20" rows="16" id="<?php echo $this->get_field_id( 'text' ); ?>" name="<?php echo $this->get_field_name( 'text' ); ?>"><?php echo esc_textarea( $text ); ?></textarea>
+		<textarea class="widefat" cols="20" rows="8" id="<?php echo $this->get_field_id( 'text' ); ?>" name="<?php echo $this->get_field_name( 'text' ); ?>"><?php echo esc_textarea( $text ); ?></textarea>
 		</p>
 
 <?php
@@ -187,20 +187,26 @@ class BTSocMed_Widget extends WP_Widget {
 		
 		$social_media = '<ul class="social-media-list">';
 		
-		if ( isset( $jt_base_options['facebook'] ) )
+		if ( $jt_base_options['facebook'] )
 			$social_media .= '<li class="facebook"><a href="'. esc_url( $jt_base_options['facebook'] ) .'">facebook</a></li>';		
-		if ( isset( $jt_base_options['twitter'] ) )
+		if ( $jt_base_options['twitter'] )
 			$social_media .= '<li class="twitter"><a href="'. esc_url( $jt_base_options['twitter'] ) .'">twitter</a></li>';
-		if ( isset( $jt_base_options['linkedin'] ) )
+		if ( $jt_base_options['linkedin'] )
 			$social_media .= '<li class="linkedin"><a href="'. esc_url( $jt_base_options['linkedin'] ) .'">linkedin</a></li>';
-		if ( isset( $jt_base_options['gplus'] ) )
+		if ( $jt_base_options['gplus'] )
 			$social_media .= '<li class="gplus"><a href="'. esc_url( $jt_base_options['gplus'] ) .'">gplus</a></li>';
-		if ( isset( $jt_base_options['pinterest'] ) )
+		if ( $jt_base_options['pinterest'] )
 			$social_media .= '<li class="pinterest"><a href="'. esc_url( $jt_base_options['pinterest'] ) .'">pinterest</a></li>';
-		if ( isset( $jt_base_options['youtube'] ) )
+		if ( $jt_base_options['youtube'] )
 			$social_media .= '<li class="youtube"><a href="'. esc_url( $jt_base_options['youtube'] ) .'">youtube</a></li>';
+		if ( $jt_base_options['additional_1'] )
+			$social_media .= '<li class="additional_1"><a href="'. esc_url( $jt_base_options['additional_1'] ) .'">additional 1</a></li>';
+		if ( $jt_base_options['additional_2'] )
+			$social_media .= '<li class="additional_2"><a href="'. esc_url( $jt_base_options['additional_2'] ) .'">additional 2</a></li>';
+		if ( $jt_base_options['additional_3'] )
+			$social_media .= '<li class="additional_3"><a href="'. esc_url( $jt_base_options['additional_3'] ) .'">additional 3</a></li>';
 		
-		$social_media = '</ul>';
+		$social_media .= '</ul>';
 		
 		echo $social_media;
 		
@@ -221,7 +227,7 @@ class BTSocMed_Widget extends WP_Widget {
 ?>
 		<p>
 		<label for="<?php echo $this->get_field_id( 'text' ); ?>"><?php _e( 'Text before social media links:' ); ?></label> 
-		<textarea class="widefat" cols="20" rows="16" id="<?php echo $this->get_field_id( 'text' ); ?>" name="<?php echo $this->get_field_name( 'text' ); ?>"><?php echo esc_textarea( $text ); ?></textarea>
+		<textarea class="widefat" cols="20" rows="8" id="<?php echo $this->get_field_id( 'text' ); ?>" name="<?php echo $this->get_field_name( 'text' ); ?>"><?php echo esc_textarea( $text ); ?></textarea>
 		</p>
 <?php
 	}
@@ -238,6 +244,7 @@ class BTSocMed_Widget extends WP_Widget {
 function register_jems_bt_widgets() {
 	register_widget( 'BTAddress_Widget' );
 	register_widget( 'BTContact_Widget' );
+	register_widget( 'BTSocMed_Widget' );
 }
 
 if ( class_exists( 'jtThemeBackend' ) === true ) {
