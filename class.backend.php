@@ -51,6 +51,10 @@ class jtThemeBackend {
 					<td><input type="text" name="town_city" class="regular-text" value="<?php if ( isset( $jt_base_options['town_city'] ) ) echo esc_attr( $jt_base_options['town_city'] ); ?>"></td>
 				</tr>
 				<tr>
+					<th scope="row"><label>County/Country</label></th>
+					<td><input type="text" name="county_country" class="regular-text" value="<?php if ( isset( $jt_base_options['county_country'] ) ) echo esc_attr( $jt_base_options['county_country'] ); ?>"></td>
+				</tr>
+				<tr>
 					<th scope="row"><label>Postcode</label></th>
 					<td><input type="text" name="postcode" class="regular-text" value="<?php if ( isset( $jt_base_options['postcode'] ) ) echo esc_attr( $jt_base_options['postcode'] ); ?>"></td>
 				</tr>
