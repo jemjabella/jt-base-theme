@@ -31,6 +31,8 @@ class BTAddress_Widget extends WP_Widget {
 			$address .= '<br>'. esc_attr( $jt_base_options['address_2'] );
 		if ( isset( $jt_base_options['town_city'] ) )
 			$address .= '<br>'. esc_attr( $jt_base_options['town_city'] );
+		if ( isset( $jt_base_options['county_country'] ) )
+			$address .= '<br>'. esc_attr( $jt_base_options['county_country'] );
 		if ( isset( $jt_base_options['postcode'] ) )
 			$address .= '<br>'. esc_attr( $jt_base_options['postcode'] );
 		
@@ -100,7 +102,7 @@ class BTContact_Widget extends WP_Widget {
 		if ( !empty( $jt_base_options['fax'] ) )
 			$contact .= $faxpref . $jt_base_options['fax'] .'<br>';
 		if ( !empty( $jt_base_options['email'] ) )
-			$contact .= $emlpref . $jt_base_options['email'] .'<br>';
+			$contact .= $emlpref . '<a href="mailto:'. $jt_base_options['email'] .'">'. $jt_base_options['email'] .'</a><br>';
 		
 		echo wpautop( $contact );
 		
