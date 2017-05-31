@@ -97,16 +97,24 @@ class BTContact_Widget extends WP_Widget {
 		$emlpref = !empty( $instance['emlpref'] ) ? $instance['emlpref'] : __( 'Email:', 'jtbt' );
 		
 		$email_text = !empty( $instance['email_text'] ) ? $instance['email_text'] : $jt_base_options['email'];
+		$format = !empty( $instance['format'] ) ? $instance['format'] : 'p';
 		
 		$contact = null;
+
 		if ( !empty( $jt_base_options['telephone'] ) )
-			$contact .= $telpref . $jt_base_options['telephone'] .'<br>';
+			$contact[] = $telpref . $jt_base_options['telephone'];
 		if ( !empty( $jt_base_options['fax'] ) )
-			$contact .= $faxpref . $jt_base_options['fax'] .'<br>';
+			$contact[] = $faxpref . $jt_base_options['fax'];
 		if ( !empty( $jt_base_options['email'] ) )
-			$contact .= $emlpref . '<a href="mailto:'. $jt_base_options['email'] .'">'. $email_text .'</a><br>';
+			$contact[] = $emlpref . '<a href="mailto:'. $jt_base_options['email'] .'">'. $email_text .'</a>';
 		
-		echo wpautop( $contact );
+		if ( $format == 'ul' ) {
+			echo "<ul>\r\n<li>". implode( "</li>\r\n<li>", $contact ) ."</li>\r\n</ul>";
+		} else {
+			echo wpautop( implode( "<br>", $contact ) );
+		}
+		
+		
 		
 		
 		echo $args['after_widget'];
