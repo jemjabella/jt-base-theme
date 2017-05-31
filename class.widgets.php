@@ -96,13 +96,15 @@ class BTContact_Widget extends WP_Widget {
 		$faxpref = !empty( $instance['faxpref'] ) ? $instance['faxpref'] : __( 'Fax:', 'jtbt' );
 		$emlpref = !empty( $instance['emlpref'] ) ? $instance['emlpref'] : __( 'Email:', 'jtbt' );
 		
+		$email_text = !empty( $instance['email_text'] ) ? $instance['email_text'] : $jt_base_options['email'];
+		
 		$contact = null;
 		if ( !empty( $jt_base_options['telephone'] ) )
 			$contact .= $telpref . $jt_base_options['telephone'] .'<br>';
 		if ( !empty( $jt_base_options['fax'] ) )
 			$contact .= $faxpref . $jt_base_options['fax'] .'<br>';
 		if ( !empty( $jt_base_options['email'] ) )
-			$contact .= $emlpref . '<a href="mailto:'. $jt_base_options['email'] .'">'. $jt_base_options['email'] .'</a><br>';
+			$contact .= $emlpref . '<a href="mailto:'. $jt_base_options['email'] .'">'. $email_text .'</a><br>';
 		
 		echo wpautop( $contact );
 		
