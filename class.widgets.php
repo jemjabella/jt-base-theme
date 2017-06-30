@@ -23,17 +23,17 @@ class BTAddress_Widget extends WP_Widget {
 		$jt_base_options = get_option( 'jt_base_options' );
 		$address = null;
 		
-		if ( isset( $jt_base_options['company_name'] ) ) 
+		if ( isset( $jt_base_options['company_name'] ) && !empty( $jt_base_options['company_name'] ) ) 
 			$address .= '<br>'. esc_attr( $jt_base_options['company_name'] );
-		if ( isset( $jt_base_options['address_1'] ) )
+		if ( isset( $jt_base_options['address_1'] ) && !empty( $jt_base_options['address_1'] ) )
 			$address .= '<br>'. esc_attr( $jt_base_options['address_1'] );
-		if ( isset( $jt_base_options['address_2'] ) )
+		if ( isset( $jt_base_options['address_2'] ) && !empty( $jt_base_options['address_2'] ) )
 			$address .= '<br>'. esc_attr( $jt_base_options['address_2'] );
-		if ( isset( $jt_base_options['town_city'] ) )
+		if ( isset( $jt_base_options['town_city'] ) && !empty( $jt_base_options['town_city'] ) )
 			$address .= '<br>'. esc_attr( $jt_base_options['town_city'] );
-		if ( isset( $jt_base_options['county_country'] ) )
+		if ( isset( $jt_base_options['county_country'] ) && !empty( $jt_base_options['county_country'] ) )
 			$address .= '<br>'. esc_attr( $jt_base_options['county_country'] );
-		if ( isset( $jt_base_options['postcode'] ) )
+		if ( isset( $jt_base_options['postcode'] ) && !empty( $jt_base_options['postcode'] ) )
 			$address .= '<br>'. esc_attr( $jt_base_options['postcode'] );
 		
 		echo wpautop( $address );
