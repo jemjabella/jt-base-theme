@@ -69,7 +69,7 @@ class jtThemeBackend {
 				</tr>
 				<tr>
 					<th scope="row"><label>Twitter</label></th>
-					<td><input type="text" name="twitter" class="regular-text" placeholder="@" value="<?php if ( isset( $jt_base_options['twitter'] ) ) echo esc_attr( $jt_base_options['twitter'] ); ?>"></td>
+					<td><input type="text" name="twitter" class="regular-text" placeholder="http://" value="<?php if ( isset( $jt_base_options['twitter'] ) ) echo esc_attr( $jt_base_options['twitter'] ); ?>"></td>
 				</tr>
 				<tr>
 					<th scope="row"><label>LinkedIn</label></th>
@@ -82,6 +82,10 @@ class jtThemeBackend {
 				<tr>
 					<th scope="row"><label>Pinterest</label></th>
 					<td><input type="text" name="pinterest" class="regular-text" placeholder="http://" value="<?php if ( isset( $jt_base_options['pinterest'] ) ) echo esc_attr( $jt_base_options['pinterest'] ); ?>"></td>
+				</tr>
+				<tr>
+					<th scope="row"><label>Instagram</label></th>
+					<td><input type="text" name="instagram" class="regular-text" placeholder="http://" value="<?php if ( isset( $jt_base_options['instagram'] ) ) echo esc_attr( $jt_base_options['instagram'] ); ?>"></td>
 				</tr>
 				<tr>
 					<th scope="row"><label>YouTube</label></th>

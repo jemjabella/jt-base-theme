@@ -211,6 +211,8 @@ class BTSocMed_Widget extends WP_Widget {
 			$social_media .= '<li class="gplus"><a href="'. esc_url( $jt_base_options['gplus'] ) .'">gplus</a></li>';
 		if ( $jt_base_options['pinterest'] )
 			$social_media .= '<li class="pinterest"><a href="'. esc_url( $jt_base_options['pinterest'] ) .'">pinterest</a></li>';
+		if ( $jt_base_options['instagram'] )
+			$social_media .= '<li class="instagram"><a href="'. esc_url( $jt_base_options['instagram'] ) .'">instagram</a></li>';
 		if ( $jt_base_options['youtube'] )
 			$social_media .= '<li class="youtube"><a href="'. esc_url( $jt_base_options['youtube'] ) .'">youtube</a></li>';
 		if ( $jt_base_options['additional_1'] )
